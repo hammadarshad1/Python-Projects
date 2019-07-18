@@ -1,4 +1,6 @@
 import re
+import hashpwd
+
 def passwd():
     x=True
     while x:
@@ -18,7 +20,8 @@ def passwd():
         else:
             print('valid Password!!')
             x = False
-            return password
+            pwd = hashpwd.hashPwd(password)
+            return pwd
     if x:
         print('Invalid Password!! Try again')
         passwd()

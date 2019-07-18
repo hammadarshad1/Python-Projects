@@ -8,12 +8,12 @@ def signup():
     password = pas.passwd()
     mydb = mysql.connect(
         host = 'localhost',
-        user = '___', #Write user of db
-        passwd = '___', # Write Password of db
-        database = '___'
+        user = 'root', #Write user of db
+        passwd = '', # Write Password of db
+        database = 'python'
     )
     mycursor = mydb.cursor()
-    mycursor.execute("INSERT INTO logindb (____, ___) VALUES ('"+user+"' , '"+password+"')") # column name in place of ____
+    mycursor.execute("INSERT INTO logindb (user_name, password) VALUES ('"+user+"' , '"+password+"')") # column name in place of ____
     mydb.commit()
     print('Account Successfully Created')
     n = input('Do you wish to login (y/n): ')
