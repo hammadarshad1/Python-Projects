@@ -8,9 +8,9 @@ def login():
     pwd = hashpwd.hashPwd(pas)
     mydb = mysql.connect(
         host = 'localhost',
-        user = 'root', # write username of db
-        passwd = '', # write password of db
-        database = 'python' # put data base name here!!
+        user = 'write username of db', 
+        passwd = 'write password of db', 
+        database = 'put database name here!!' 
     )
     check = pd.read_sql_query("SELECT * from logindb where user_name = '"+ user +"' and password = '"+ pwd +"'",mydb) # put columns name in place of ___
     if not check.empty:
